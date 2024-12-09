@@ -1,0 +1,74 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph":
+    [
+        {
+            "@type": "CreativeWork",
+            "@id": "ro-crate-metadata.json",
+            "conformsTo":
+            {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            },
+            "about":
+            {
+                "@id": "./"
+            }
+        },
+        {
+            "@id": "./",
+            "identifier": "https://doi.org/10.4225/59/59672c09f4a4b",
+            "@type": "Dataset",
+            "datePublished": "2017",
+            "name": "Minimal crate",
+            "description": "An RO-Crate with a text file",
+            "license":
+            {
+                "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"
+            },
+            "hasPart": [
+                { "@id": "doc001" },
+                { "@id": "doc002" }
+            ]
+        },
+        {
+            "@id": "doc001",
+            "@type": "Dataset",
+            "name": "A text file for testing",
+            "indexableText": { "@id": "doc001/textfile.txt" },
+            "hasPart": [
+                { "@id": "doc001/textfile.txt" },
+                { "@id": "doc001/somethingelse.txt" }
+            ]
+        },
+        {   "@id": "doc001/textfile.txt",
+            "@type": "File", 
+            "name": "text file",
+            "contentEncoding": "text/plain"
+        },
+        {   "@id": "doc001/somethingelse.txt",
+            "@type": "File", 
+            "name": "text file",
+            "contentEncoding": "text/plain"
+        },
+        {
+            "@id": "doc002",
+            "@type": "Dataset",
+            "name": "A csv file for testing",
+            "hasPart": [
+                { "@id": "doc002/utterances.csv" }
+            ]
+        },
+        {   "@id": "doc002/utterances.csv",
+            "@type": "File", 
+            "name": "CSV file",
+            "contentEncoding": "text/csv"
+        },
+        {
+            "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+            "@type": "CreativeWork",
+            "description": "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/au/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.",
+            "identifier": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+            "name": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)"
+        }
+    ]
+}
