@@ -24,7 +24,7 @@ def test_crate(tmp_path):
     jcrate.write_json(Path(tmp_path))
     with open(jsonf, "r") as jfh:
         jsonld = json.load(jfh)
-        jcrate2 = TinyCrate(jsonld=jsonld)
+        jcrate2 = Crate(jsonld=jsonld)
         for i in range(1000):
             eid = f"#ds{i:05d}"
             ea = jcrate.get(eid)
@@ -36,7 +36,7 @@ def test_load_file(crates):
     cratedir = crates["textfiles"]
     with open(Path(cratedir) / "ro-crate-metadata.json", "r") as jfh:
         jsonld = json.load(jfh)
-        crate = TinyCrate(jsonld=jsonld, directory=cratedir)
+        crate = Crate(jsonld=jsonld, directory=cratedir)
         tfile = crate.get("doc001/textfile.txt")
         contents = tfile.fetch()
         with open(Path(cratedir) / "doc001" / "textfile.txt", "r") as tfh:
@@ -56,7 +56,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     cratedir = crates["textfiles"]
     with open(Path(cratedir) / "ro-crate-metadata.json", "r") as jfh:
         jsonld = json.load(jfh)
-        crate = TinyCrate(jsonld=jsonld, directory=cratedir)
+        crate = Crate(jsonld=jsonld, directory=cratedir)
         # add an entity to the crate with the endpoint URL as the id
         urlid = httpserver.url_for("/textfileonurl.txt")
         crate.add("File", urlid, {"name": "textfileonurl.txt"})
