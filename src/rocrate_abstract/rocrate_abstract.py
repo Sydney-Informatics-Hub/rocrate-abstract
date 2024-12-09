@@ -41,12 +41,12 @@ class Crate:
 
     def all(self):
         """dunno about this"""
-        return [TinyEntity(self, e) for e in self.graph]
+        return [Entity(self, e) for e in self.graph]
 
     def get(self, i):
         es = [e for e in self.graph if e["@id"] == i]
         if es:
-            return TinyEntity(self, es[0])
+            return Entity(self, es[0])
         else:
             return None
 
@@ -67,7 +67,7 @@ class Crate:
             json.dump({"@context": self.context, "@graph": self.graph}, jfh, indent=2)
 
 
-class TinyEntity:
+class Entity:
     def __init__(self, crate, ejsonld):
         self.crate = crate
         self.type = ejsonld["@type"]
