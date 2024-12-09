@@ -1,0 +1,23 @@
+[project]
+name = "rocrate-abstract"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Mike Lynch", email = "m.lynch@sydney.edu.au" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.32.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest-httpserver>=1.1.0",
+    "pytest>=8.3.4",
+    "ruff>=0.8.2",
+]
